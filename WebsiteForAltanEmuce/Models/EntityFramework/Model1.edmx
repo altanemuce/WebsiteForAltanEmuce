@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CreativeWebsiteForAltanEmuceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Aboutid" />
+          </Key>
+          <Property Name="Aboutid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Abouttitle" Type="varchar" MaxLength="50" />
+          <Property Name="Abouttext" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Adminid" />
+          </Key>
+          <Property Name="Adminid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adminname" Type="varchar" MaxLength="50" />
+          <Property Name="Adminpassword" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Contactid" />
+          </Key>
+          <Property Name="Contactid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Contactname" Type="varchar" MaxLength="50" />
+          <Property Name="Contactmail" Type="varchar" MaxLength="50" />
+          <Property Name="Contactphone" Type="varchar" MaxLength="50" />
+          <Property Name="Contactmessage" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Main">
+          <Key>
+            <PropertyRef Name="Mainid" />
+          </Key>
+          <Property Name="Mainid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Maintitle" Type="varchar" MaxLength="50" />
+          <Property Name="Maintext" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Portfolio">
+          <Key>
+            <PropertyRef Name="Porfolioid" />
+          </Key>
+          <Property Name="Porfolioid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Portfoliopic" Type="varchar(max)" />
+          <Property Name="Portfolioname" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Serviceid" />
+          </Key>
+          <Property Name="Serviceid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Servicetitle" Type="varchar" MaxLength="50" />
+          <Property Name="Servicesubtitle" Type="varchar" MaxLength="50" />
+          <Property Name="Servicetext" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="CreativeWebsiteForAltanEmuceModelStoreContainer">
+          <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Main" EntityType="Self.Main" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CreativeWebsiteForAltanEmuceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Aboutid" />
+          </Key>
+          <Property Name="Aboutid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Abouttitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Abouttext" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Contactid" />
+          </Key>
+          <Property Name="Contactid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Contactname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contactmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contactphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contactmessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Portfolio">
+          <Key>
+            <PropertyRef Name="Porfolioid" />
+          </Key>
+          <Property Name="Porfolioid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Portfoliopic" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Portfolioname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="Serviceid" />
+          </Key>
+          <Property Name="Serviceid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Servicetitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Servicesubtitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Servicetext" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="CreativeWebsiteForAltanEmuceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="About" EntityType="Self.About" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" />
+          <EntitySet Name="Portfolio" EntityType="Self.Portfolio" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="Main" EntityType="CreativeWebsiteForAltanEmuceModel.Main" />
+          <EntitySet Name="Admin" EntityType="CreativeWebsiteForAltanEmuceModel.Admin" />
+        </EntityContainer>
+        <EntityType Name="Main">
+          <Key>
+            <PropertyRef Name="Mainid" />
+          </Key>
+          <Property Name="Mainid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Maintitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Maintext" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Adminid" />
+          </Key>
+          <Property Name="Adminid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adminname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Adminpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CreativeWebsiteForAltanEmuceModelStoreContainer" CdmEntityContainer="CreativeWebsiteForAltanEmuceEntities">
+          <EntitySetMapping Name="About">
+            <EntityTypeMapping TypeName="CreativeWebsiteForAltanEmuceModel.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="Aboutid" ColumnName="Aboutid" />
+                <ScalarProperty Name="Abouttitle" ColumnName="Abouttitle" />
+                <ScalarProperty Name="Abouttext" ColumnName="Abouttext" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contact">
+            <EntityTypeMapping TypeName="CreativeWebsiteForAltanEmuceModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Contactid" ColumnName="Contactid" />
+                <ScalarProperty Name="Contactname" ColumnName="Contactname" />
+                <ScalarProperty Name="Contactmail" ColumnName="Contactmail" />
+                <ScalarProperty Name="Contactphone" ColumnName="Contactphone" />
+                <ScalarProperty Name="Contactmessage" ColumnName="Contactmessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Portfolio">
+            <EntityTypeMapping TypeName="CreativeWebsiteForAltanEmuceModel.Portfolio">
+              <MappingFragment StoreEntitySet="Portfolio">
+                <ScalarProperty Name="Portfolioname" ColumnName="Portfolioname" />
+                <ScalarProperty Name="Porfolioid" ColumnName="Porfolioid" />
+                <ScalarProperty Name="Portfoliopic" ColumnName="Portfoliopic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="CreativeWebsiteForAltanEmuceModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="Serviceid" ColumnName="Serviceid" />
+                <ScalarProperty Name="Servicetitle" ColumnName="Servicetitle" />
+                <ScalarProperty Name="Servicesubtitle" ColumnName="Servicesubtitle" />
+                <ScalarProperty Name="Servicetext" ColumnName="Servicetext" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Main">
+            <EntityTypeMapping TypeName="CreativeWebsiteForAltanEmuceModel.Main">
+              <MappingFragment StoreEntitySet="Main">
+                <ScalarProperty Name="Maintext" ColumnName="Maintext" />
+                <ScalarProperty Name="Maintitle" ColumnName="Maintitle" />
+                <ScalarProperty Name="Mainid" ColumnName="Mainid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="CreativeWebsiteForAltanEmuceModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Adminpassword" ColumnName="Adminpassword" />
+                <ScalarProperty Name="Adminname" ColumnName="Adminname" />
+                <ScalarProperty Name="Adminid" ColumnName="Adminid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

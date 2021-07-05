@@ -1,0 +1,21 @@
+﻿@model WebsiteForAltanEmuce.Models.EntityFramework.Service
+@{
+    ViewBag.Title = "GetService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    @Html.Label("Serviceid")
+    @Html.TextBoxFor(x => x.Serviceid, new { @class = "form-control form-control-user" })
+    <br />
+    @Html.Label("Servicesubtitle", new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Servicesubtitle)
+    <br />
+    @Html.Label("Servicetext", new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Servicetext)
+    <br />
+    <button class="btn btn-primary btn-user btn-block"> Güncelle</button>
+
+</form>
+
+

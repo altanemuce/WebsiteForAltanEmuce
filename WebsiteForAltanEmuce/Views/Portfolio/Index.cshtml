@@ -1,0 +1,59 @@
+﻿@using WebsiteForAltanEmuce.Models.EntityFramework;
+@model List<Portfolio>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Portfolyo</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Eğitimi Veren Kişi</th>
+                        <th>Sertifika Linki</th>
+                        <th>Sil</th>
+                        <th>Düzenle </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Eğitimi Veren Kişi</th>
+                        <th>Sertifika Linki</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var portfolio in Model)
+                    {
+                        <tr>
+                            <td>@portfolio.Porfolioid</td>
+                            <td>@portfolio.Portfolioname</td>
+                            <td>@portfolio.Portfoliopic</td>
+                            <td>  <a href="/Portfolio/DeletePortfolio/@portfolio.Porfolioid" class="btn btn-danger btn-sm">Sil</a></td>
+                            <td><a href="/Portfolio/GetPortfolio/@portfolio.Porfolioid" class="btn btn-warning btn-sm">Düzenle</a></td>
+                            <td></td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        <a href="/Portfolio/AddPortfolio/" class="btn btn-primary btn-lg">Yeni Portfolyo Ekle</a>
+    </div>
+  
+</div>
+
+
+

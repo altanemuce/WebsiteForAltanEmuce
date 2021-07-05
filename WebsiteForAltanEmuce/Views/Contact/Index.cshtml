@@ -1,0 +1,29 @@
+﻿@using WebsiteForAltanEmuce.Models.EntityFramework
+@model List<Contact> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Mesajlar</h6>
+    </div>
+    @foreach (var contact in Model)
+    {
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">@contact.Contactmail</h6>
+        </div>
+        <div class="card-body">
+            <p>
+                <h5 class="m-0 font-weight-bold text-primary">  Gönderen İsmi: @contact.Contactname</h5> 
+            </p>
+            <p class="mb-0">
+                @contact.Contactmessage
+
+            </p>
+        </div>
+    }
+</div>
